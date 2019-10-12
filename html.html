@@ -6,6 +6,7 @@
 .block {
   display: block;
   width: 100%;
+  
   border: none;
   background-color: #4CAF50;
   color: white;
@@ -20,12 +21,21 @@
   color: black;
 }
 </style>
+<script>
+
+wsd = new WebSocket('ws://192.168.0.100:6969');
+
+function myFunction(who) {
+var kaif = who;
+  wsd.send(JSON.stringify({event: 'change_camera', id:kaif}));
+}
+
+
+</script>
 </head>
 <body>
 
-<h2>Full Width Buttons</h2>
-
-<button class="block">LORINEFAIRY</button>
+<button onclick="myFunction(`tehluppa0`)"class="block">LORINEFAIRY</button>
 <button class="block">ЛИСИЧКА</button>
 <button class="block">СПЕРМА</button>
 <button class="block">КАЙФ</button>
